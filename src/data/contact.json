@@ -1,0 +1,22 @@
+[
+  {
+    "type": "Email",
+    "value": "email@gmail.com"
+  },
+  {
+    "type": "Blog",
+    "value": "https://website.com"
+  },
+  {
+    "type": "Github",
+    "value": "@username"
+  },
+  {
+    "type": "Twitter",
+    "value": "@username"
+  },
+  {
+    "type": "LinkedIn",
+    "value": "https://website.com"
+  }
+]

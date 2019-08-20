@@ -1,0 +1,23 @@
+[
+  {
+    "skill": "Skill 1",
+    "selfRating": 5
+  },
+  {
+    "skill": "Skill 2",
+    "selfRating": 4
+  },
+  {
+    "skill": "Skill 3",
+    "selfRating": 3
+  },
+  {
+    "skill": "Skill 4",
+    "selfRating": 2
+  },
+  {
+    "skill": "Skill 4",
+    "selfRating": 1
+  }
+
+]
