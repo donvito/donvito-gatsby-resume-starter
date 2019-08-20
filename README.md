@@ -8,9 +8,12 @@
   Online Resume - Gatsby Starter
 </h1>
 
-<img alt="Gatsby" src="src/images/resume-starter.png" width="800" align="center"/>
+This is a gatsby starter to create your online resume. It  uses <a href="https://material-ui.com/">Material UI</a> for the theming.
 
-This is a starter to create your online resume.
+Check the Demo <a href="https://donvito-gatsby-resume-starter.netlify.com">https://donvito-gatsby-resume-starter.netlify.com</a>
+
+<a href="https://donvito-gatsby-resume-starter.netlify.com"><img alt="Gatsby" src="src/images/resume-starter.png" width="800" align="center"/></a>
+
 
 ## 🚀 Quick start
 
