@@ -8,6 +8,8 @@
   Online Resume - Gatsby Starter
 </h1>
 
+<img alt="Gatsby" src="src/images/resume-starter.png" width="600" />
+
 This is a starter to create your online resume.
 
 ## 🚀 Quick start
