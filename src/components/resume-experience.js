@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import { green } from '@material-ui/core/colors';
 import Paper from '@material-ui/core/Paper';
-import { StaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -32,67 +32,63 @@ const useStyles = makeStyles(theme => ({
 export default function ResumeExperience() {
   const classes = useStyles();
 
+  const data = useStaticQuery(graphql`
+    query {
+      allExperienceJson {
+        edges {
+          node {
+            id
+            position
+            company
+            duration
+            description
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <Paper className={classes.root}>
        <Typography variant="h5" component="h3">
           Work Experience
         </Typography>       
-      <List>  
-        <StaticQuery
-          query={graphql`
-          query {
-            allExperienceJson {
-              edges {
-                node {
-                  id
-                  position
-                  company
-                  duration
-                  description
+      <List>          
+        <div>
+          {data.allExperienceJson.edges.map(s => (
+              <ListItem alignItems="flex-start">
+              <ListItemAvatar>
+                <Avatar className={classes.greenAvatar}>
+                  <AssignmentIcon />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText
+                primary={s.node.position}
+                secondary={
+                  <React.Fragment>
+                    <Typography
+                      component="span"
+                      variant="body2"
+                      className={classes.inline}
+                      color="textPrimary"
+                      paddingBottom={100}
+                    >
+                    {s.node.company}                
+                  </Typography>
+                  - {s.node.duration}
+    
+                  <Typography 
+                      variant="body2"
+                      color="textPrimary">
+                      {s.node.description}
+                  </Typography>
+                    
+                  </React.Fragment>
                 }
-              }
-            }
-          }
-        `}
-          render={data => (
-            <div>
-              {data.allExperienceJson.edges.map(s => (
-                 <ListItem alignItems="flex-start">
-                 <ListItemAvatar>
-                   <Avatar className={classes.greenAvatar}>
-                     <AssignmentIcon />
-                   </Avatar>
-                 </ListItemAvatar>
-                 <ListItemText
-                   primary={s.node.position}
-                   secondary={
-                     <React.Fragment>
-                       <Typography
-                         component="span"
-                         variant="body2"
-                         className={classes.inline}
-                         color="textPrimary"
-                         paddingBottom={100}
-                       >
-                        {s.node.company}                
-                     </Typography>
-                      - {s.node.duration}
-       
-                     <Typography 
-                         variant="body2"
-                         color="textPrimary">
-                         {s.node.description}
-                     </Typography>
-                       
-                     </React.Fragment>
-                   }
-                 />
-               </ListItem>
-              ))}
-            </div>
-          )}
-        />
-
+              />
+            </ListItem>
+          ))}
+        </div>      
       </List>
     </Paper>
   );
