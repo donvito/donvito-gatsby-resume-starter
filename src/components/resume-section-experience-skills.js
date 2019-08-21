@@ -8,6 +8,7 @@ import ResumeSkills from './resume-skills';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    paddingTop: 20
   },
   paper: {
     padding: theme.spacing(2),

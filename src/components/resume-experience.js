@@ -13,8 +13,7 @@ import Paper from '@material-ui/core/Paper';
 import { useStaticQuery, graphql } from "gatsby"
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
+  root: {    
     maxWidth: 600,
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(3, 2),

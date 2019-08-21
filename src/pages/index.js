@@ -8,10 +8,9 @@ import SectionResumeSummaryContact from "../components/resume-section-summary-co
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />    
-    <SectionResumeSummaryContact/>
-    <br/>
-    <SectionResumeExperienceSkills />    
+    <SEO title="My Resume" />    
+      <SectionResumeSummaryContact />    
+      <SectionResumeExperienceSkills />    
     <div>
   </div>
   </Layout>
